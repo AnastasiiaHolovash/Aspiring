@@ -11,6 +11,9 @@
 		5D886B9E28D61F94009E531A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886B9D28D61F94009E531A /* ContentView.swift */; };
 		5D886BA028D61F96009E531A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D886B9F28D61F96009E531A /* Assets.xcassets */; };
 		5D886BA328D61F96009E531A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D886BA228D61F96009E531A /* Preview Assets.xcassets */; };
+		5D886BAA28D62FE8009E531A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BA928D62FE8009E531A /* Model.swift */; };
+		5D886BAF28D631A1009E531A /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BAE28D631A1009E531A /* Tab.swift */; };
+		5D886BB328D6375D009E531A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BB228D6375D009E531A /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		5D886B9D28D61F94009E531A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5D886B9F28D61F96009E531A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D886BA228D61F96009E531A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5D886BA928D62FE8009E531A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		5D886BAE28D631A1009E531A /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		5D886BB228D6375D009E531A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +57,10 @@
 		5D886B9A28D61F94009E531A /* Aspiring */ = {
 			isa = PBXGroup;
 			children = (
-				5D886B9B28D61F94009E531A /* AspiringApp.swift */,
-				5D886B9D28D61F94009E531A /* ContentView.swift */,
+				5D886BAC28D63097009E531A /* App */,
+				5D886BAB28D63007009E531A /* Model */,
+				5D886BB028D63447009E531A /* Modules */,
+				5D886BAD28D63195009E531A /* Views */,
 				5D886B9F28D61F96009E531A /* Assets.xcassets */,
 				5D886BA128D61F96009E531A /* Preview Content */,
 			);
@@ -65,6 +73,47 @@
 				5D886BA228D61F96009E531A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5D886BAB28D63007009E531A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D886BA928D62FE8009E531A /* Model.swift */,
+				5D886BAE28D631A1009E531A /* Tab.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5D886BAC28D63097009E531A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5D886B9B28D61F94009E531A /* AspiringApp.swift */,
+				5D886B9D28D61F94009E531A /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5D886BAD28D63195009E531A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5D886BB028D63447009E531A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5D886BB128D6373A009E531A /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5D886BB128D6373A009E531A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5D886BB228D6375D009E531A /* Home.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +186,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D886BAA28D62FE8009E531A /* Model.swift in Sources */,
 				5D886B9E28D61F94009E531A /* ContentView.swift in Sources */,
+				5D886BB328D6375D009E531A /* Home.swift in Sources */,
 				5D886B9C28D61F94009E531A /* AspiringApp.swift in Sources */,
+				5D886BAF28D631A1009E531A /* Tab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
