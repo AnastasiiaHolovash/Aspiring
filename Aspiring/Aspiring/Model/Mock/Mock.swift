@@ -11,22 +11,26 @@ let advertisements = [
     Advertisement(
         title: "Пакувальний центр",
         type: .work,
-        subtitle: "м. Київ вул. Жилянська 59"
+        subtitle: "м. Київ вул. Жилянська 59",
+        progress: 0.5
     ),
     Advertisement(
         title: "Купуємо флісовий одяг",
         type: .donation,
-        subtitle: "20 000$"
+        subtitle: "20 000$",
+        progress: 0
     ),
     Advertisement(
         title: "Збір одягу",
-        type: .work,
-        subtitle: "м. Київ вул. Жилянська 59"
+        type: .itemDonation,
+        subtitle: "м. Київ вул. Жилянська 59",
+        progress: 0.1
     ),
     Advertisement(
         title: "Купуємо флісовий одяг",
         type: .donation,
-        subtitle: "2300$"
+        subtitle: "2300$",
+        progress: 0.9
     )
 ]
 

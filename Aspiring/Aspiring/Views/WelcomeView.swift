@@ -14,40 +14,51 @@ struct WelcomeView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8.0) {
             Spacer()
-            VStack {
-                Image(systemName: "star.fill")
-                    .resizable(resizingMode: .stretch)
-                    .frame(width: 90, height: 90)
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [Color("StarLight").opacity(0.7), Color("StarDark")],
-                            startPoint: .bottomLeading,
-                            endPoint: .topTrailing
+            HStack {
+                Spacer()
+
+                VStack {
+                    Image(systemName: "star.fill")
+                        .resizable(resizingMode: .stretch)
+                        .frame(width: 70, height: 70)
+                        .foregroundStyle(
+                            LinearGradient(
+                                colors: [Color("StarLight").opacity(0.7), Color("StarDark")],
+                                startPoint: .bottomLeading,
+                                endPoint: .topTrailing
+                            )
                         )
-                    )
-                    .strokeStyle(cornerRadius: 16)
-                Text(String(welcomeData.stars))
-                    .font(.title)
+                    Text(String(welcomeData.stars))
+                        .font(.title)
+                }
+
+                Spacer()
+
+                Text(verbatim: "🐈‍⬛")
+                    .font(.system(size: 150, weight: .regular))
+
+                Spacer()
             }
-            Spacer()
+
             Text(welcomeData.title)
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .foregroundStyle(.linearGradient(colors: [.primary, .primary.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
                 .lineLimit(1)
                 .dynamicTypeSize(.large)
+
             Text(welcomeData.subtitle.uppercased())
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .foregroundStyle(.secondary)
+
+            Spacer()
         }
         .padding(.all, 20.0)
         .padding(.vertical, 20)
-        .frame(height: 350.0)
+        .frame(height: 280)
         .background(.ultraThinMaterial)
         .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
-//        .cornerRadius(30.0)
-//        .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
         .strokeStyle()
         .padding(.horizontal, 20)
     }
