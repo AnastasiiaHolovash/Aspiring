@@ -27,7 +27,7 @@ struct HomeView: View {
 
                 featured
 
-                Text("Courses".uppercased())
+                Text("Ось чим ти можеш допомогти сьогодні".uppercased())
                     .font(.footnote.weight(.semibold))
                     .foregroundColor(.secondary)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -118,8 +118,6 @@ struct HomeView: View {
                         }
                         .accessibilityElement(children: .combine)
                         .accessibilityAddTraits(.isButton)
-
-//                    Text("\(proxy.frame(in: .global).minX)")
                 }
             }
         }
@@ -167,7 +165,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .preferredColorScheme(.dark)
+//            .preferredColorScheme(.dark)
             .environmentObject(Model())
     }
 }
