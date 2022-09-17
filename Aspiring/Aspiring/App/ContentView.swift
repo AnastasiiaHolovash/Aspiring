@@ -18,21 +18,19 @@ struct ContentView: View {
             switch selectedTab {
             case .home:
                 HomeView()
-            case .explore:
-                break
-            case .notifications:
-                break
-            case .library:
-                break
+            case .create:
+                Rectangle()
+            case .myAdvertisement:
+                Rectangle()
             }
 
             TabBar()
                 .offset(y: model.showDetail ? 200 : 0)
 
             if showModal {
-                ModalView()
-                    .zIndex(1)
-                    .accessibilityAddTraits(.isModal)
+//                ModalView()
+//                    .zIndex(1)
+//                    .accessibilityAddTraits(.isModal)
             }
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
