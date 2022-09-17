@@ -20,6 +20,8 @@
 		5D886BBC28D63F33009E531A /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BBB28D63F33009E531A /* Animations.swift */; };
 		5D886BBE28D64105009E531A /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BBD28D64105009E531A /* TabBar.swift */; };
 		5D886BC028D64209009E531A /* StrokeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BBF28D64209009E531A /* StrokeStyle.swift */; };
+		5D886BC228D655F8009E531A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BC128D655F8009E531A /* WelcomeView.swift */; };
+		5D886BC428D657A0009E531A /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BC328D6579F009E531A /* Welcome.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		5D886BBB28D63F33009E531A /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		5D886BBD28D64105009E531A /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		5D886BBF28D64209009E531A /* StrokeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeStyle.swift; sourceTree = "<group>"; };
+		5D886BC128D655F8009E531A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		5D886BC328D6579F009E531A /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 				5D886BA928D62FE8009E531A /* Model.swift */,
 				5D886BAE28D631A1009E531A /* Tab.swift */,
 				5D886BB928D63DB9009E531A /* Advertisement.swift */,
+				5D886BC328D6579F009E531A /* Welcome.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 				5D886BBB28D63F33009E531A /* Animations.swift */,
 				5D886BBD28D64105009E531A /* TabBar.swift */,
 				5D886BBF28D64209009E531A /* StrokeStyle.swift */,
+				5D886BC128D655F8009E531A /* WelcomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,7 +224,9 @@
 				5D886BB328D6375D009E531A /* Home.swift in Sources */,
 				5D886BC028D64209009E531A /* StrokeStyle.swift in Sources */,
 				5D886BB828D63B66009E531A /* Mock.swift in Sources */,
+				5D886BC428D657A0009E531A /* Welcome.swift in Sources */,
 				5D886B9C28D61F94009E531A /* AspiringApp.swift in Sources */,
+				5D886BC228D655F8009E531A /* WelcomeView.swift in Sources */,
 				5D886BAF28D631A1009E531A /* Tab.swift in Sources */,
 				5D886BBC28D63F33009E531A /* Animations.swift in Sources */,
 				5D886BB528D63AA0009E531A /* NavigationBar.swift in Sources */,
