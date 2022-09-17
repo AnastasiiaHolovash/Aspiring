@@ -55,7 +55,7 @@ struct HomeView: View {
                 Color.clear.frame(height: 70)
             })
             .overlay(
-                NavigationBar(title: "Featured", hasScrolled: $hasScrolled)
+                NavigationBar(title: "Aspirng", hasScrolled: $hasScrolled)
             )
 
             if show {
@@ -93,12 +93,11 @@ struct HomeView: View {
 
     var featured: some View {
         TabView {
-            ForEach(Array(advertisements.enumerated()), id: \.offset) { index, course in
+            ForEach(Array(advertisements.enumerated()), id: \.offset) { index, advertisement in
                 GeometryReader { proxy in
                     let minX = proxy.frame(in: .global).minX
 
-//                    FeaturedItem(course: course)
-                    Rectangle()
+                    WelcomeView()
                         .frame(maxWidth: 500)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 40)
@@ -106,7 +105,7 @@ struct HomeView: View {
                         .shadow(color: Color("Shadow").opacity(isLiteMode ? 0 : 0.3), radius: 5, x: 0, y: 3)
                         .blur(radius: abs(minX / 40))
                         .overlay(
-                            Image(course.image)
+                            Image(advertisement.type.imageName)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(height: 230)

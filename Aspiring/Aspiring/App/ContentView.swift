@@ -28,10 +28,11 @@ struct ContentView: View {
                 .offset(y: model.showDetail ? 200 : 0)
 
             if showModal {
-                ModalView()
-                    .zIndex(1)
-                    .accessibilityAddTraits(.isModal)
+                 ModalView()
+                     .zIndex(1)
+                     .accessibilityAddTraits(.isModal)
             }
+
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
             Color.clear.frame(height: 88)

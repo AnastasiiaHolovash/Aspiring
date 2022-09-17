@@ -17,7 +17,7 @@
 		5D886BB528D63AA0009E531A /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BB428D63AA0009E531A /* NavigationBar.swift */; };
 		5D886BB828D63B66009E531A /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BB728D63B66009E531A /* Mock.swift */; };
 		5D886BBA28D63DB9009E531A /* Advertisement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BB928D63DB9009E531A /* Advertisement.swift */; };
-		5D886BBC28D63F33009E531A /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BBB28D63F33009E531A /* Animation.swift */; };
+		5D886BBC28D63F33009E531A /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BBB28D63F33009E531A /* Animations.swift */; };
 		5D886BBE28D64105009E531A /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BBD28D64105009E531A /* TabBar.swift */; };
 		5D886BC028D64209009E531A /* StrokeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BBF28D64209009E531A /* StrokeStyle.swift */; };
 		F124102328D645F300528D43 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124102228D645F300528D43 /* ModalView.swift */; };
@@ -26,6 +26,8 @@
 		F124102928D64B2300528D43 /* PreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124102828D64B2300528D43 /* PreferenceKeys.swift */; };
 		F124102C28D64C5800528D43 /* InputStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124102B28D64C5800528D43 /* InputStyle.swift */; };
 		F124102E28D64C9800528D43 /* AngularButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124102D28D64C9800528D43 /* AngularButtonStyle.swift */; };
+		5D886BC228D655F8009E531A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BC128D655F8009E531A /* WelcomeView.swift */; };
+		5D886BC428D657A0009E531A /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BC328D6579F009E531A /* Welcome.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +42,7 @@
 		5D886BB428D63AA0009E531A /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		5D886BB728D63B66009E531A /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		5D886BB928D63DB9009E531A /* Advertisement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertisement.swift; sourceTree = "<group>"; };
-		5D886BBB28D63F33009E531A /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		5D886BBB28D63F33009E531A /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		5D886BBD28D64105009E531A /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		5D886BBF28D64209009E531A /* StrokeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeStyle.swift; sourceTree = "<group>"; };
 		F124102228D645F300528D43 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		F124102828D64B2300528D43 /* PreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKeys.swift; sourceTree = "<group>"; };
 		F124102B28D64C5800528D43 /* InputStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputStyle.swift; sourceTree = "<group>"; };
 		F124102D28D64C9800528D43 /* AngularButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngularButtonStyle.swift; sourceTree = "<group>"; };
+		5D886BC128D655F8009E531A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		5D886BC328D6579F009E531A /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 				5D886BB928D63DB9009E531A /* Advertisement.swift */,
 				F124102428D646E200528D43 /* Auth.swift */,
 				F124102828D64B2300528D43 /* PreferenceKeys.swift */,
+				5D886BC328D6579F009E531A /* Welcome.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -126,9 +131,10 @@
 			isa = PBXGroup;
 			children = (
 				5D886BB428D63AA0009E531A /* NavigationBar.swift */,
-				5D886BBB28D63F33009E531A /* Animation.swift */,
+				5D886BBB28D63F33009E531A /* Animations.swift */,
 				5D886BBD28D64105009E531A /* TabBar.swift */,
 				5D886BBF28D64209009E531A /* StrokeStyle.swift */,
+				5D886BC128D655F8009E531A /* WelcomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,6 +266,11 @@
 				5D886BAF28D631A1009E531A /* Tab.swift in Sources */,
 				5D886BBC28D63F33009E531A /* Animation.swift in Sources */,
 				F124102C28D64C5800528D43 /* InputStyle.swift in Sources */,
+				5D886BC428D657A0009E531A /* Welcome.swift in Sources */,
+				5D886B9C28D61F94009E531A /* AspiringApp.swift in Sources */,
+				5D886BC228D655F8009E531A /* WelcomeView.swift in Sources */,
+				5D886BAF28D631A1009E531A /* Tab.swift in Sources */,
+				5D886BBC28D63F33009E531A /* Animations.swift in Sources */,
 				5D886BB528D63AA0009E531A /* NavigationBar.swift in Sources */,
 				5D886BBE28D64105009E531A /* TabBar.swift in Sources */,
 				F124102328D645F300528D43 /* ModalView.swift in Sources */,
