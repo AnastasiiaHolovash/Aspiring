@@ -13,7 +13,7 @@ struct HomeView: View {
     @State var show = false
     @State var showStatusBar = true
     @State var selectedID = UUID()
-    @State var showSection = false
+    @State var showDetails = false
     @State var showPet = false
     @State var selectedIndex = 0
     @EnvironmentObject var model: Model
@@ -97,7 +97,7 @@ struct HomeView: View {
         .tabViewStyle(.page(indexDisplayMode: .never))
         .frame(height: 360)
         .background(
-            Image("Blob 1")
+            Image("BlueSpot")
                 .offset(x: 250, y: -100)
                 .accessibility(hidden: true)
         )
@@ -111,19 +111,18 @@ struct HomeView: View {
         VStack(alignment: .leading) {
             ForEach(Array(advertisements.enumerated()), id: \.offset) { index, advertisement in
                 if index != 0 { Divider() }
-                SectionRow(advertisement: advertisement)
+                AdvertisementView(advertisement: advertisement)
                     .onTapGesture {
                         selectedIndex = index
-                        showSection = true
+                        showDetails = true
                     }
             }
         }
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30, style: .continuous))
         .strokeStyle(cornerRadius: 30)
         .padding(20)
-        .sheet(isPresented: $showSection) {
-            // TODO: Open details
-//            SectionView(section: advertisements[selectedIndex])
+        .sheet(isPresented: $showDetails) {
+            AdvertisementDetailsView(advertisement: advertisements[selectedIndex])
         }
     }
 }

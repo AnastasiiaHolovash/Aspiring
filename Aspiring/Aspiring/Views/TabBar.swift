@@ -22,13 +22,10 @@ struct TabBar: View {
             .padding(.horizontal, 8)
             .padding(.top, 14)
             .frame(height: hasHomeIndicator ? 88 : 62, alignment: .top)
-            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: hasHomeIndicator ? 34 : 0, style: .continuous))
             .background(
                 background
             )
-            .overlay(
-                overlay
-            )
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: hasHomeIndicator ? 34 : 0, style: .continuous))
             .strokeStyle(cornerRadius: hasHomeIndicator ? 34 : 0)
             .frame(maxHeight: .infinity, alignment: .bottom)
             .ignoresSafeArea()
@@ -75,27 +72,6 @@ struct TabBar: View {
                 Spacer()
             }
             Circle().fill(color).frame(width: tabItemWidth)
-            if selectedTab == .home { Spacer() }
-            if selectedTab == .create {
-                Spacer()
-            }
-        }
-        .padding(.horizontal, 8)
-    }
-
-    var overlay: some View {
-        HStack {
-            if selectedTab == .create { Spacer() }
-            if selectedTab == .myAdvertisement {
-                Spacer()
-                Spacer()
-            }
-            Rectangle()
-                .fill(color)
-                .frame(width: 28, height: 5)
-                .cornerRadius(3)
-                .frame(width: tabItemWidth)
-                .frame(maxHeight: .infinity, alignment: .top)
             if selectedTab == .home { Spacer() }
             if selectedTab == .create {
                 Spacer()

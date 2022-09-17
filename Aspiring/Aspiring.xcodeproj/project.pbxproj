@@ -24,6 +24,8 @@
 		5D886BC428D657A0009E531A /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BC328D6579F009E531A /* Welcome.swift */; };
 		5D886BCB28D66E0F009E531A /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BCA28D66E0F009E531A /* ProgressView.swift */; };
 		5D886BCD28D66E56009E531A /* AdvertisementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BCC28D66E56009E531A /* AdvertisementView.swift */; };
+		5D886BD228D679DF009E531A /* MyAdvertisements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BD128D679DF009E531A /* MyAdvertisements.swift */; };
+		5D886BD428D6819B009E531A /* AdvertisementDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BD328D6819B009E531A /* AdvertisementDetailsView.swift */; };
 		F124102328D645F300528D43 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124102228D645F300528D43 /* ModalView.swift */; };
 		F124102528D646E200528D43 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124102428D646E200528D43 /* Auth.swift */; };
 		F124102728D649C900528D43 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124102628D649C900528D43 /* AuthenticationView.swift */; };
@@ -51,6 +53,8 @@
 		5D886BC328D6579F009E531A /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		5D886BCA28D66E0F009E531A /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		5D886BCC28D66E56009E531A /* AdvertisementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementView.swift; sourceTree = "<group>"; };
+		5D886BD128D679DF009E531A /* MyAdvertisements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdvertisements.swift; sourceTree = "<group>"; };
+		5D886BD328D6819B009E531A /* AdvertisementDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementDetailsView.swift; sourceTree = "<group>"; };
 		F124102228D645F300528D43 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		F124102428D646E200528D43 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		F124102628D649C900528D43 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 		5D886BAD28D63195009E531A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5D886BD328D6819B009E531A /* AdvertisementDetailsView.swift */,
 				5D886BB428D63AA0009E531A /* NavigationBar.swift */,
 				5D886BBB28D63F33009E531A /* Animations.swift */,
 				5D886BBD28D64105009E531A /* TabBar.swift */,
@@ -148,6 +153,7 @@
 		5D886BB028D63447009E531A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5D886BD028D679C8009E531A /* MyAdvertisement */,
 				F124102128D645D800528D43 /* Auth */,
 				5D886BB128D6373A009E531A /* Home */,
 			);
@@ -168,6 +174,14 @@
 				5D886BB728D63B66009E531A /* Mock.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		5D886BD028D679C8009E531A /* MyAdvertisement */ = {
+			isa = PBXGroup;
+			children = (
+				5D886BD128D679DF009E531A /* MyAdvertisements.swift */,
+			);
+			path = MyAdvertisement;
 			sourceTree = "<group>";
 		};
 		F124102128D645D800528D43 /* Auth */ = {
@@ -273,9 +287,11 @@
 				5D886BAF28D631A1009E531A /* Tab.swift in Sources */,
 				5D886BBC28D63F33009E531A /* Animations.swift in Sources */,
 				F124102C28D64C5800528D43 /* InputStyle.swift in Sources */,
+				5D886BD228D679DF009E531A /* MyAdvertisements.swift in Sources */,
 				5D886BC428D657A0009E531A /* Welcome.swift in Sources */,
 				5D886B9C28D61F94009E531A /* AspiringApp.swift in Sources */,
 				5D886BC228D655F8009E531A /* WelcomeView.swift in Sources */,
+				5D886BD428D6819B009E531A /* AdvertisementDetailsView.swift in Sources */,
 				5D886BAF28D631A1009E531A /* Tab.swift in Sources */,
 				5D886BBC28D63F33009E531A /* Animations.swift in Sources */,
 				5D886BB528D63AA0009E531A /* NavigationBar.swift in Sources */,

@@ -12,13 +12,24 @@ struct Advertisement: Identifiable {
     var title: String
     var type: AdvertisementType
     var subtitle: String
-    var progress: CGFloat
+    var limit: Int
+    var alreadyDone: Int
+    var details: String
 }
 
 enum AdvertisementType: String {
     case work = "Потребує вашого часу"
     case donation = "Збір коштів"
     case itemDonation = "Збір речей"
+    case create = ""
+}
+
+extension Advertisement {
+
+    var progress: CGFloat {
+        CGFloat(alreadyDone) / CGFloat(limit)
+    }
+
 }
 
 extension AdvertisementType {
@@ -31,17 +42,9 @@ extension AdvertisementType {
             return "dollarsign"
         case .itemDonation:
             return "shippingbox"
+        case .create:
+            return "plus"
         }
     }
-
-    var imageColor: Color {
-        switch self {
-        case .work:
-            return Color("Work")
-        case .donation:
-            return Color("Donation")
-        case .itemDonation:
-            return Color("ItemDonation")
-        }
-    }
+    
 }

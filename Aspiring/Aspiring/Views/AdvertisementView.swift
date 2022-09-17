@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct SectionRow: View {
-    var advertisement: Advertisement = advertisements[1]
+struct AdvertisementView: View {
+    var advertisement: Advertisement = createAdvertisement
 
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
@@ -32,13 +32,15 @@ struct SectionRow: View {
                     .font(.caption.weight(.medium))
                     .foregroundStyle(.secondary)
             }
+
+            Spacer()
         }
         .padding(20)
     }
 }
 
-struct SectionRow_Previews: PreviewProvider {
+struct AdvertisementView_Previews: PreviewProvider {
     static var previews: some View {
-        SectionRow()
+        AdvertisementView()
     }
 }

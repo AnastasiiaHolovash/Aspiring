@@ -21,7 +21,7 @@ struct ContentView: View {
             case .create:
                 Rectangle()
             case .myAdvertisement:
-                Rectangle()
+                MyAdvertisements()
             }
 
             TabBar()

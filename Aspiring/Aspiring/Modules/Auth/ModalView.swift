@@ -38,7 +38,7 @@ struct ModalView: View {
             .offset(y: appear[0] ? 0 : 200)
             .padding(20)
             .background(
-                Image("Blob 1")
+                Image("BlueSpot")
                     .opacity(appear[2] ? 1 : 0)
                     .offset(y: appear[2] ? 0 : 10)
                     .blur(radius: appear[2] ? 0 : 40)
