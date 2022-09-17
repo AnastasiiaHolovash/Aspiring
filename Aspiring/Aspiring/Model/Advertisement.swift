@@ -12,6 +12,7 @@ struct Advertisement: Identifiable {
     var title: String
     var type: AdvertisementType
     var subtitle: String
+    var progress: CGFloat
 }
 
 enum AdvertisementType: String {
