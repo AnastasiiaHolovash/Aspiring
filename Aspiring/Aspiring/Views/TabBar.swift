@@ -22,16 +22,13 @@ struct TabBar: View {
             .padding(.horizontal, 8)
             .padding(.top, 14)
             .frame(height: hasHomeIndicator ? 88 : 62, alignment: .top)
-            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: hasHomeIndicator ? 34 : 0, style: .continuous))
             .background(
                 background
             )
-            .overlay(
-                overlay
-            )
-//            .strokeStyle(cornerRadius: hasHomeIndicator ? 34 : 0)
-//            .frame(maxHeight: .infinity, alignment: .bottom)
-//            .ignoresSafeArea()
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: hasHomeIndicator ? 34 : 0, style: .continuous))
+            .strokeStyle(cornerRadius: hasHomeIndicator ? 34 : 0)
+            .frame(maxHeight: .infinity, alignment: .bottom)
+            .ignoresSafeArea()
         }
     }
 
@@ -58,7 +55,6 @@ struct TabBar: View {
             .blendMode(selectedTab == item.tab ? .overlay : .normal)
             .overlay(
                 GeometryReader { proxy in
-//                            Text("\(proxy.size.width)")
                     Color.clear.preference(key: TabPreferenceKey.self, value: proxy.size.width)
                 }
             )
@@ -70,43 +66,16 @@ struct TabBar: View {
 
     var background: some View {
         HStack {
-            if selectedTab == .home { Spacer() }
-            if selectedTab == .create { Spacer() }
-            if selectedTab == .myAdvertisement {
+            if selectedTab == .myAdvertisement { Spacer() }
+            if selectedTab == .profile {
                 Spacer()
                 Spacer()
             }
             Circle().fill(color).frame(width: tabItemWidth)
             if selectedTab == .home { Spacer() }
-            if selectedTab == .create {
-                Spacer()
-                Spacer()
-            }
-            if selectedTab == .myAdvertisement { Spacer() }
-        }
-        .padding(.horizontal, 8)
-    }
-
-    var overlay: some View {
-        HStack {
-            if selectedTab == .home { Spacer() }
-            if selectedTab == .create { Spacer() }
             if selectedTab == .myAdvertisement {
                 Spacer()
-                Spacer()
             }
-            Rectangle()
-                .fill(color)
-                .frame(width: 28, height: 5)
-                .cornerRadius(3)
-                .frame(width: tabItemWidth)
-                .frame(maxHeight: .infinity, alignment: .top)
-            if selectedTab == .home { Spacer() }
-            if selectedTab == .create {
-                Spacer()
-                Spacer()
-            }
-            if selectedTab == .myAdvertisement { Spacer() }
         }
         .padding(.horizontal, 8)
     }
@@ -115,6 +84,5 @@ struct TabBar: View {
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()
-.previewInterfaceOrientation(.portrait)
     }
 }

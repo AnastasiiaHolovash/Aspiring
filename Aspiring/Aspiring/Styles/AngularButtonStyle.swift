@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AngularButtonStyle: ButtonStyle {
+struct AngularBlueButtonStyle: ButtonStyle {
     @Environment(\.controlSize) var controlSize
 
     var extraPadding: CGFloat {
@@ -71,16 +71,102 @@ struct AngularButtonStyle: ButtonStyle {
     }
 }
 
-extension ButtonStyle where Self == AngularButtonStyle {
-    static var angular: Self {
+struct AngularButtonStyle: ButtonStyle {
+    @Environment(\.controlSize) var controlSize
+
+    var extraPadding: CGFloat {
+        switch controlSize {
+        case .mini:
+            return 0
+        case .small:
+            return 0
+        case .regular:
+            return 4
+        case .large:
+            return 12
+        @unknown default:
+            return 0
+        }
+    }
+
+    var cornerRadius: CGFloat {
+        switch controlSize {
+        case .mini:
+            return 12
+        case .small:
+            return 12
+        case .regular:
+            return 16
+        case .large:
+            return 20
+        @unknown default:
+            return 12
+        }
+    }
+
+    func makeBody(configuration: Configuration) -> some View {
+            configuration.label
+                .padding(.horizontal, 14)
+                .padding(.vertical, 20)
+                .background(
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .fill(.linearGradient(
+                            colors: [
+                                Color(.systemBackground),
+                                Color(.systemBackground).opacity(0.6)
+                            ],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        ))
+                        .blendMode(.softLight)
+                )
+                .background(
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .fill(.angularGradient(
+                            colors: [
+                                .pink,
+                                .purple,
+                                .blue,
+                                .pink
+                            ],
+                            center: .center,
+                            startAngle: .degrees(-90),
+                            endAngle: .degrees(270)
+                        ))
+                        .blur(radius: 16)
+                )
+                .strokeStyle(cornerRadius: 16)
+        }
+}
+
+extension ButtonStyle where Self == AngularBlueButtonStyle {
+    
+    static var angularBlue: Self {
         return .init(isEnabled: true)
     }
 
     static var enabledAngular: Self {
-        return .angular
+        return .angularBlue
     }
 
     static var disabledAngular: Self {
         return .init(isEnabled: false)
     }
+
+    static var enabledAngularBlue: Self {
+        return .angularBlue
+    }
+
+    static var disabledAngularBlue: Self {
+        return .init(isEnabled: false)
+    }
 }
+
+extension ButtonStyle where Self == AngularButtonStyle {
+
+    static var angular: Self {
+        return .init()
+    }
+
+}
+

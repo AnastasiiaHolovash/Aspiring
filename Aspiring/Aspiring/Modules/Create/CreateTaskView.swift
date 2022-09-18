@@ -140,7 +140,7 @@ struct CreateTaskView: View {
         }
         .frame(maxHeight: .infinity, alignment: .bottom)
         .background(
-            Image("Blob 1")
+            Image("BlueSpot")
                 .opacity(appear[2] ? 1 : 0)
                 .offset(y: appear[2] ? 0 : 10)
                 .blur(radius: appear[2] ? 0 : 40)

@@ -19,21 +19,14 @@ struct AuthenticationView: View {
     @State var phoneY: CGFloat = 0
     @State var codeY: CGFloat = 0
     @State var circleColor: Color = .blue
-    @State var appear = [false, false, false]
     @State var isCodeSent = false
-    @EnvironmentObject var model: Model
-    @AppStorage("isLogged") var isLogged = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("Увійти")
                 .font(.largeTitle).bold()
-                .opacity(appear[0] ? 1 : 0)
-                .offset(y: appear[0] ? 0 : 20)
             Text("Введіть номер телефону та отриманий код з смс")
                 .font(.headline)
-                .opacity(appear[1] ? 1 : 0)
-                .offset(y: appear[1] ? 0 : 20)
 
             Group {
                 TextField("+380", text: $phone)
@@ -41,7 +34,6 @@ struct AuthenticationView: View {
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
                     .focused($focusedField, equals: .phone)
-                    .shadow(color: focusedField == .phone ? .primary.opacity(0.3) : .clear, radius: 10, x: 0, y: 3)
                     .overlay(geometry)
                     .onPreferenceChange(CirclePreferenceKey.self) { value in
                         phoneY = value
@@ -99,8 +91,6 @@ struct AuthenticationView: View {
                 }
 
             }
-            .opacity(appear[2] ? 1 : 0)
-            .offset(y: appear[2] ? 0 : 20)
         }
         .padding(20)
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30, style: .continuous))
@@ -121,17 +111,6 @@ struct AuthenticationView: View {
                     circleY = codeY
                     circleColor = .red
                 }
-            }
-        }
-        .onAppear {
-            withAnimation(.spring().delay(0.1)) {
-                appear[0] = true
-            }
-            withAnimation(.spring().delay(0.2)) {
-                appear[1] = true
-            }
-            withAnimation(.spring().delay(0.3)) {
-                appear[2] = true
             }
         }
     }
