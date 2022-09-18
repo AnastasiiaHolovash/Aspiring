@@ -44,7 +44,10 @@ struct MyAdvertisements: View {
         .strokeStyle(cornerRadius: 30)
         .padding(20)
         .sheet(isPresented: $showDetails) {
-            AdvertisementDetailsView(advertisement: myAdvertisements[selectedIndex])
+            AdvertisementDetailsView(
+                advertisement: myAdvertisements[selectedIndex],
+                showIWillVisit: false
+            )
         }
     }
 }

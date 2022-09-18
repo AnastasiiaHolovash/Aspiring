@@ -66,14 +66,14 @@ struct TabBar: View {
 
     var background: some View {
         HStack {
-            if selectedTab == .create { Spacer() }
-            if selectedTab == .myAdvertisement {
+            if selectedTab == .myAdvertisement { Spacer() }
+            if selectedTab == .profile {
                 Spacer()
                 Spacer()
             }
             Circle().fill(color).frame(width: tabItemWidth)
             if selectedTab == .home { Spacer() }
-            if selectedTab == .create {
+            if selectedTab == .myAdvertisement {
                 Spacer()
             }
         }

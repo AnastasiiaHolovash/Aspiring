@@ -122,7 +122,10 @@ struct HomeView: View {
         .strokeStyle(cornerRadius: 30)
         .padding(20)
         .sheet(isPresented: $showDetails) {
-            AdvertisementDetailsView(advertisement: advertisements[selectedIndex])
+            AdvertisementDetailsView(
+                advertisement: advertisements[selectedIndex],
+                showIWillVisit: true
+            )
         }
     }
 }

@@ -13,7 +13,6 @@ struct NavigationBar: View {
     @State var showSearch = false
     @State var showAccount = false
     @AppStorage("showModal") var showModal = false
-    @AppStorage("isLogged") var isLogged = false
 
     var body: some View {
         ZStack {
@@ -42,30 +41,6 @@ struct NavigationBar: View {
                 }
                 .sheet(isPresented: $showSearch) {
                     // TODO: Search
-                }
-
-                Button {
-                    if isLogged {
-                        showAccount = true
-                    } else {
-                        withAnimation {
-                            showModal = true
-                        }
-                    }
-                } label: {
-                    Image("catLightning")
-                        .resizable()
-                        .frame(width: 26, height: 26)
-                        .cornerRadius(10)
-                        .padding(8)
-                        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-                        .strokeStyle(cornerRadius: 18)
-                }
-                .accessibilityElement()
-                .accessibilityLabel("Account")
-                .accessibilityAddTraits(.isButton)
-                .sheet(isPresented: $showAccount) {
-                    // TODO: Account
                 }
             }
             .frame(maxWidth: .infinity, alignment: .trailing)

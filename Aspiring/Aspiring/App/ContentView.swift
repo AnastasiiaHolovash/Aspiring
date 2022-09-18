@@ -18,10 +18,12 @@ struct ContentView: View {
             switch selectedTab {
             case .home:
                 HomeView()
-            case .create:
-                Rectangle()
+
             case .myAdvertisement:
                 MyAdvertisements()
+
+            case .profile:
+                ModalView()
             }
 
             TabBar()

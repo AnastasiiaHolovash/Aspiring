@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AdvertisementDetailsView: View {
     var advertisement: Advertisement = advertisements[0]
+    let showIWillVisit: Bool
 
     @EnvironmentObject var model: Model
     @Environment(\.dismiss) var dismiss
@@ -60,6 +61,21 @@ struct AdvertisementDetailsView: View {
 
                     Spacer()
 
+                    Button {
+                    } label: {
+                        Text("👍 Я буду")
+                            .frame(maxWidth: .infinity)
+                    }
+                    .frame(height: 44, alignment: .center)
+                    .controlSize(.large)
+                    .background(.blue)
+                    .foregroundColor(.black)
+                    .cornerRadius(16)
+                    .padding(.horizontal, 20)
+
+
+                    Spacer()
+
                     VStack(alignment: .leading, spacing: 30) {
                         Text("Детальніше")
                             .font(.title).bold()
@@ -89,16 +105,14 @@ struct AdvertisementDetailsView: View {
                 .font(.body.weight(.bold))
                 .foregroundColor(.secondary)
                 .padding(8)
-                .background(.ultraThinMaterial, in: Circle())
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
         .padding(20)
-        .ignoresSafeArea()
     }
 }
 
 struct SectionView_Previews: PreviewProvider {
     static var previews: some View {
-        AdvertisementDetailsView()
+        AdvertisementDetailsView(showIWillVisit: true)
     }
 }
