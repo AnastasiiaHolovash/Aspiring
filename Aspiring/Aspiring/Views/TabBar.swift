@@ -9,27 +9,19 @@ import SwiftUI
 
 struct TabBar: View {
     @AppStorage("selectedTab") var selectedTab: Tab = .home
-    @State var color: Color = .teal
     @State var tabItemWidth: CGFloat = 0
 
     var body: some View {
-        GeometryReader { proxy in
-            let hasHomeIndicator = proxy.safeAreaInsets.bottom - 88 > 20
-
             HStack {
                 buttons
             }
             .padding(.horizontal, 8)
             .padding(.top, 14)
-            .frame(height: hasHomeIndicator ? 88 : 62, alignment: .top)
-            .background(
-                background
-            )
-            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: hasHomeIndicator ? 34 : 0, style: .continuous))
-            .strokeStyle(cornerRadius: hasHomeIndicator ? 34 : 0)
+            .frame(height: 88, alignment: .top)
+            .background(Color.teal.opacity(0.2))
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 34, style: .continuous))
             .frame(maxHeight: .infinity, alignment: .bottom)
             .ignoresSafeArea()
-        }
     }
 
     var buttons: some View {
@@ -37,7 +29,6 @@ struct TabBar: View {
             Button {
                 withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
                     selectedTab = item.tab
-                    color = item.color
                 }
             } label: {
                 VStack(spacing: 0) {
@@ -51,33 +42,8 @@ struct TabBar: View {
                 }
                 .frame(maxWidth: .infinity)
             }
-            .foregroundStyle(selectedTab == item.tab ? .primary : .secondary)
-            .blendMode(selectedTab == item.tab ? .overlay : .normal)
-            .overlay(
-                GeometryReader { proxy in
-                    Color.clear.preference(key: TabPreferenceKey.self, value: proxy.size.width)
-                }
-            )
-            .onPreferenceChange(TabPreferenceKey.self) { value in
-                tabItemWidth = value
-            }
+            .foregroundColor(selectedTab == item.tab ? .blue.opacity(0.8) : .blue.opacity(0.4))
         }
-    }
-
-    var background: some View {
-        HStack {
-            if selectedTab == .myAdvertisement { Spacer() }
-            if selectedTab == .profile {
-                Spacer()
-                Spacer()
-            }
-            Circle().fill(color).frame(width: tabItemWidth)
-            if selectedTab == .home { Spacer() }
-            if selectedTab == .myAdvertisement {
-                Spacer()
-            }
-        }
-        .padding(.horizontal, 8)
     }
 }
 
