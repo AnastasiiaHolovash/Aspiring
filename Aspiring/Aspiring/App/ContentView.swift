@@ -19,23 +19,22 @@ struct ContentView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
 
-//            switch selectedTab {
-//            case .home:
-//                HomeView()
-//                    .environmentObject(model)
-//
-//            case .myAdvertisement:
-//                MyAdvertisements()
-//                    .environmentObject(model)
-//
-//            case .profile:
-//                ModalView()
-//                    .environmentObject(model)
-//            }
-//
-//            TabBar()
-//                .offset(y: model.showDetail ? 200 : 0)
-            RewardsView(presentedAsModal: .constant(true))
+            switch selectedTab {
+            case .home:
+                HomeView()
+                    .environmentObject(model)
+
+            case .myAdvertisement:
+                MyAdvertisements()
+                    .environmentObject(model)
+
+            case .profile:
+                ModalView()
+                    .environmentObject(model)
+            }
+
+            TabBar()
+                .offset(y: model.showDetail ? 200 : 0)
         }
         .sheet(isPresented: $isShowingScanner) {
             codeScannerView
