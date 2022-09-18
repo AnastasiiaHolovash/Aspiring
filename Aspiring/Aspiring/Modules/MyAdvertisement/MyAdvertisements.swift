@@ -11,6 +11,8 @@ struct MyAdvertisements: View {
     @State var showDetails = false
     @State var selectedIndex = 0
 
+    @EnvironmentObject var model: Model
+
     var body: some View {
         ZStack {
             Color("Background").ignoresSafeArea()
@@ -31,7 +33,7 @@ struct MyAdvertisements: View {
             AdvertisementView(advertisement: createAdvertisement)
                 .background(Color.cyan.opacity(0.5))
             
-            ForEach(Array(myAdvertisements.enumerated()), id: \.offset) { index, advertisement in
+            ForEach(Array(model.myAdvertisements.enumerated()), id: \.offset) { index, advertisement in
                 if index != 0 { Divider() }
                 AdvertisementView(advertisement: advertisement)
                     .onTapGesture {
@@ -45,7 +47,7 @@ struct MyAdvertisements: View {
         .padding(20)
         .sheet(isPresented: $showDetails) {
             AdvertisementDetailsView(
-                advertisement: myAdvertisements[selectedIndex],
+                advertisement: model.myAdvertisements[selectedIndex],
                 showIWillVisit: false
             )
         }
