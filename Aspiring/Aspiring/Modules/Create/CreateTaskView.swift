@@ -21,6 +21,7 @@ struct CreateTaskView: View {
     }
 
     @AppStorage("isLiteMode") var isLiteMode = true
+    @Binding var presentedAsModal: Bool
     @State var hasScrolled = false
     @Namespace var namespace
     @State var show = false
@@ -61,14 +62,33 @@ struct CreateTaskView: View {
     var body: some View {
         GeometryReader { proxy in
             VStack {
+                HStack {
+
+                    Text("Створи")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.title.weight(.bold))
+                        .padding(.leading, 20)
+                        .foregroundStyle(.linearGradient(colors: [.accentColor, .accentColor.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
+
+                    Button {
+                        self.presentedAsModal = false
+                    } label: {
+                        Image(systemName: "xmark")
+                            .font(.body.weight(.bold))
+                            .foregroundColor(.secondary)
+                            .padding(8)
+                        .background(.ultraThinMaterial, in: Circle())
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+
+                }
+                .padding(.top, 20)
+                .padding(.trailing, 20)
+                .opacity(appear[1] ? 1 : 0)
+                .offset(y: appear[1] ? 0 : -200)
+
                 let minX = proxy.frame(in: .global).minX
                 scrollDetection
-                Text("Створи")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.title.weight(.bold))
-                    .padding(.top, 20)
-                    .padding(.leading, 20)
-                    .foregroundStyle(.linearGradient(colors: [.accentColor, .accentColor.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
                 texts
                 ScrollView {
 
@@ -238,8 +258,10 @@ struct CreateTaskView: View {
 }
 
 struct CreateTaskView_Previews: PreviewProvider {
+
     static var previews: some View {
-        CreateTaskView()
+        CreateTaskView(presentedAsModal: .constant(true))
             .environmentObject(Model())
     }
 }
+

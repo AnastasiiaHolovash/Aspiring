@@ -10,6 +10,7 @@ import SwiftUI
 struct MyAdvertisements: View {
     @State var showDetails = false
     @State var selectedIndex = 0
+    @State var presentingModal = false
 
     @EnvironmentObject var model: Model
 
@@ -32,7 +33,11 @@ struct MyAdvertisements: View {
         VStack(alignment: .leading) {
             AdvertisementView(advertisement: createAdvertisement)
                 .background(Color.cyan.opacity(0.5))
-            
+                .onTapGesture {
+                    self.presentingModal = true
+                }
+                .sheet(isPresented: $presentingModal) { CreateTaskView(presentedAsModal: self.$presentingModal) }
+
             ForEach(Array(model.myAdvertisements.enumerated()), id: \.offset) { index, advertisement in
                 if index != 0 { Divider() }
                 AdvertisementView(advertisement: advertisement)
