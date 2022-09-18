@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Advertisement: Identifiable {
+class Advertisement: Identifiable {
     let id = UUID()
     var title: String
     var type: AdvertisementType
@@ -15,6 +15,22 @@ struct Advertisement: Identifiable {
     var limit: Int
     var alreadyDone: Int
     var details: String
+
+    init(
+        title: String,
+        type: AdvertisementType,
+        subtitle: String,
+        limit: Int,
+        alreadyDone: Int,
+        details: String
+    ) {
+        self.title = title
+        self.type = type
+        self.subtitle = subtitle
+        self.limit = limit
+        self.alreadyDone = alreadyDone
+        self.details = details
+    }
 }
 
 enum AdvertisementType: String {
@@ -28,6 +44,10 @@ extension Advertisement {
 
     var progress: CGFloat {
         CGFloat(alreadyDone) / CGFloat(limit)
+    }
+
+    func updateWith(_ value: Int) {
+        alreadyDone += value
     }
 
 }

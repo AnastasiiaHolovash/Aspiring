@@ -62,6 +62,7 @@ struct AdvertisementDetailsView: View {
                     Spacer()
 
                     Button {
+                        advertisements.first { $0.id == $0.id }?.updateWith(1)
                     } label: {
                         Text("👍 Я буду")
                             .frame(maxWidth: .infinity)

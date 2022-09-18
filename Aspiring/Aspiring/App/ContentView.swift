@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import CodeScanner
 
 struct ContentView: View {
     @AppStorage("selectedTab") var selectedTab: Tab = .home
-    @AppStorage("showModal") var showModal = false
+    @AppStorage("isShowingScanner") var isShowingScanner = false
     @EnvironmentObject var model: Model
 
     var body: some View {
@@ -28,13 +29,23 @@ struct ContentView: View {
 
             TabBar()
                 .offset(y: model.showDetail ? 200 : 0)
+        }
+        .sheet(isPresented: $isShowingScanner) {
+            ZStack {
+                CodeScannerView(codeTypes: [.qr]) { result in
+                    isShowingScanner = false
 
-            if showModal {
-                 ModalView()
-                     .zIndex(1)
-                     .accessibilityAddTraits(.isModal)
+                    switch result {
+                    case let .success(result):
+                        print(result)
+
+                    case let .failure(error):
+                        print("Scanning failed: \(error.localizedDescription)")
+                    }
+                }
+
+                Image("qrFrame")
             }
-
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
             Color.clear.frame(height: 88)

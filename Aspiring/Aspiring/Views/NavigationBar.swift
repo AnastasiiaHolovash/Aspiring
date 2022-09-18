@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct NavigationBar: View {
-    var title = ""
+    let title: String
     @Binding var hasScrolled: Bool
-    @State var showSearch = false
-    @State var showAccount = false
-    @AppStorage("showModal") var showModal = false
+    @AppStorage("isShowingScanner") var isShowingScanner = false
 
     var body: some View {
         ZStack {
@@ -30,17 +28,26 @@ struct NavigationBar: View {
 
             HStack(spacing: 16) {
                 Button {
-                    showSearch = true
+                    // TODO: Search
                 } label: {
                     Image(systemName: "magnifyingglass")
                         .font(.body.weight(.bold))
                         .frame(width: 36, height: 36)
                         .foregroundColor(.secondary)
                         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                    .strokeStyle(cornerRadius: 14)
                 }
-                .sheet(isPresented: $showSearch) {
-                    // TODO: Search
+
+                Button {
+                    isShowingScanner = true
+                } label: {
+                    Image(systemName: "qrcode.viewfinder")
+                        .font(.body.weight(.bold))
+                        .frame(width: 36, height: 36)
+                        .foregroundColor(.secondary)
+                        .background(
+                            .ultraThinMaterial,
+                            in: RoundedRectangle(cornerRadius: 14, style: .continuous)
+                        )
                 }
             }
             .frame(maxWidth: .infinity, alignment: .trailing)

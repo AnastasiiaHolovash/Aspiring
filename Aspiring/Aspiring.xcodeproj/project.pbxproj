@@ -26,6 +26,7 @@
 		5D886BCD28D66E56009E531A /* AdvertisementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BCC28D66E56009E531A /* AdvertisementView.swift */; };
 		5D886BD228D679DF009E531A /* MyAdvertisements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BD128D679DF009E531A /* MyAdvertisements.swift */; };
 		5D886BD428D6819B009E531A /* AdvertisementDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D886BD328D6819B009E531A /* AdvertisementDetailsView.swift */; };
+		5D886BD728D6AD8C009E531A /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 5D886BD628D6AD8C009E531A /* CodeScanner */; };
 		F124102328D645F300528D43 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124102228D645F300528D43 /* ModalView.swift */; };
 		F124102528D646E200528D43 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124102428D646E200528D43 /* Auth.swift */; };
 		F124102728D649C900528D43 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124102628D649C900528D43 /* AuthenticationView.swift */; };
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D886BD728D6AD8C009E531A /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +220,9 @@
 			dependencies = (
 			);
 			name = Aspiring;
+			packageProductDependencies = (
+				5D886BD628D6AD8C009E531A /* CodeScanner */,
+			);
 			productName = Aspiring;
 			productReference = 5D886B9828D61F94009E531A /* Aspiring.app */;
 			productType = "com.apple.product-type.application";
@@ -246,6 +251,9 @@
 				Base,
 			);
 			mainGroup = 5D886B8F28D61F94009E531A;
+			packageReferences = (
+				5D886BD528D6AD8C009E531A /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = 5D886B9928D61F94009E531A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -426,9 +434,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Aspiring/Preview Content\"";
-				DEVELOPMENT_TEAM = 24QAL5MM4X;
+				DEVELOPMENT_TEAM = 7KFHN9UQ5P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scan QR code";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -439,7 +448,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.anastasiiaholovash.Aspiring;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anastasiaholovash.Aspiring;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -455,9 +464,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Aspiring/Preview Content\"";
-				DEVELOPMENT_TEAM = 24QAL5MM4X;
+				DEVELOPMENT_TEAM = 7KFHN9UQ5P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scan QR code";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -468,7 +478,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.anastasiiaholovash.Aspiring;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anastasiaholovash.Aspiring;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -498,6 +508,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5D886BD528D6AD8C009E531A /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5D886BD628D6AD8C009E531A /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D886BD528D6AD8C009E531A /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5D886B9028D61F94009E531A /* Project object */;
 }
