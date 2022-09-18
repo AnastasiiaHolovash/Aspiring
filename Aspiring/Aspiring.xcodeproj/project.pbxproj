@@ -26,6 +26,13 @@
 		F124102928D64B2300528D43 /* PreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124102828D64B2300528D43 /* PreferenceKeys.swift */; };
 		F124102C28D64C5800528D43 /* InputStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124102B28D64C5800528D43 /* InputStyle.swift */; };
 		F124102E28D64C9800528D43 /* AngularButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124102D28D64C9800528D43 /* AngularButtonStyle.swift */; };
+		F124103128D65F6800528D43 /* CreateTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124103028D65F6800528D43 /* CreateTaskView.swift */; };
+		F124103328D660A600528D43 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124103228D660A600528D43 /* Task.swift */; };
+		F124103628D66AC700528D43 /* CreateTaskTextsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124103528D66AC700528D43 /* CreateTaskTextsItem.swift */; };
+		F124103928D66EED00528D43 /* CircledEmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124103828D66EED00528D43 /* CircledEmojiView.swift */; };
+		F124103B28D6794300528D43 /* TextEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124103A28D6794300528D43 /* TextEditorView.swift */; };
+		F124103D28D6896D00528D43 /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124103C28D6896D00528D43 /* CategoryItemView.swift */; };
+		F124103F28D69D0200528D43 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124103E28D69D0200528D43 /* Styles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +56,13 @@
 		F124102828D64B2300528D43 /* PreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKeys.swift; sourceTree = "<group>"; };
 		F124102B28D64C5800528D43 /* InputStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputStyle.swift; sourceTree = "<group>"; };
 		F124102D28D64C9800528D43 /* AngularButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngularButtonStyle.swift; sourceTree = "<group>"; };
+		F124103028D65F6800528D43 /* CreateTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskView.swift; sourceTree = "<group>"; };
+		F124103228D660A600528D43 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		F124103528D66AC700528D43 /* CreateTaskTextsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskTextsItem.swift; sourceTree = "<group>"; };
+		F124103828D66EED00528D43 /* CircledEmojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircledEmojiView.swift; sourceTree = "<group>"; };
+		F124103A28D6794300528D43 /* TextEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorView.swift; sourceTree = "<group>"; };
+		F124103C28D6896D00528D43 /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
+		F124103E28D69D0200528D43 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +123,7 @@
 				5D886BB928D63DB9009E531A /* Advertisement.swift */,
 				F124102428D646E200528D43 /* Auth.swift */,
 				F124102828D64B2300528D43 /* PreferenceKeys.swift */,
+				F124103228D660A600528D43 /* Task.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -136,6 +151,8 @@
 		5D886BB028D63447009E531A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F124103728D66EC500528D43 /* Base */,
+				F124102F28D65F4B00528D43 /* Create */,
 				F124102128D645D800528D43 /* Auth */,
 				5D886BB128D6373A009E531A /* Home */,
 			);
@@ -172,8 +189,36 @@
 			children = (
 				F124102B28D64C5800528D43 /* InputStyle.swift */,
 				F124102D28D64C9800528D43 /* AngularButtonStyle.swift */,
+				F124103E28D69D0200528D43 /* Styles.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		F124102F28D65F4B00528D43 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				F124103428D6695700528D43 /* Items */,
+				F124103028D65F6800528D43 /* CreateTaskView.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		F124103428D6695700528D43 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				F124103528D66AC700528D43 /* CreateTaskTextsItem.swift */,
+				F124103C28D6896D00528D43 /* CategoryItemView.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		F124103728D66EC500528D43 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F124103828D66EED00528D43 /* CircledEmojiView.swift */,
+				F124103A28D6794300528D43 /* TextEditorView.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,18 +294,25 @@
 				F124102528D646E200528D43 /* Auth.swift in Sources */,
 				5D886BAA28D62FE8009E531A /* Model.swift in Sources */,
 				5D886BBA28D63DB9009E531A /* Advertisement.swift in Sources */,
+				F124103F28D69D0200528D43 /* Styles.swift in Sources */,
 				5D886B9E28D61F94009E531A /* ContentView.swift in Sources */,
 				5D886BB328D6375D009E531A /* Home.swift in Sources */,
 				5D886BC028D64209009E531A /* StrokeStyle.swift in Sources */,
 				5D886BB828D63B66009E531A /* Mock.swift in Sources */,
+				F124103328D660A600528D43 /* Task.swift in Sources */,
+				F124103B28D6794300528D43 /* TextEditorView.swift in Sources */,
+				F124103D28D6896D00528D43 /* CategoryItemView.swift in Sources */,
 				F124102928D64B2300528D43 /* PreferenceKeys.swift in Sources */,
 				F124102E28D64C9800528D43 /* AngularButtonStyle.swift in Sources */,
+				F124103628D66AC700528D43 /* CreateTaskTextsItem.swift in Sources */,
+				F124103928D66EED00528D43 /* CircledEmojiView.swift in Sources */,
 				5D886B9C28D61F94009E531A /* AspiringApp.swift in Sources */,
 				F124102728D649C900528D43 /* AuthenticationView.swift in Sources */,
 				5D886BAF28D631A1009E531A /* Tab.swift in Sources */,
 				5D886BBC28D63F33009E531A /* Animation.swift in Sources */,
 				F124102C28D64C5800528D43 /* InputStyle.swift in Sources */,
 				5D886BB528D63AA0009E531A /* NavigationBar.swift in Sources */,
+				F124103128D65F6800528D43 /* CreateTaskView.swift in Sources */,
 				5D886BBE28D64105009E531A /* TabBar.swift in Sources */,
 				F124102328D645F300528D43 /* ModalView.swift in Sources */,
 			);

@@ -40,6 +40,8 @@ struct AngularButtonStyle: ButtonStyle {
         }
     }
 
+    let isEnabled: Bool
+
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding(.horizontal, 10 + extraPadding)
@@ -49,17 +51,36 @@ struct AngularButtonStyle: ButtonStyle {
                     .fill(.linearGradient(colors: [Color(.systemBackground), Color(.systemBackground).opacity(0.6)], startPoint: .top, endPoint: .bottom))
                     .blendMode(.softLight)
             )
-            .background(
-                RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .fill(.angularGradient(colors: [.pink, .purple, .blue, .pink], center: .center, startAngle: .degrees(-90), endAngle: .degrees(270)))
-                    .blur(radius: cornerRadius)
-            )
+            .if(isEnabled, transform: { view in
+                view
+                .background(
+                    RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+                        .fill(.angularGradient(colors: [.teal, .purple, .blue, .teal], center: .center, startAngle: .degrees(-90), endAngle: .degrees(270)))
+                        .blur(radius: cornerRadius)
+                )
+            })
+            .if(!isEnabled, transform: { view in
+                view
+                .background(
+                    RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+                        .fill(.angularGradient(colors: [.gray, .secondary, .gray], center: .center, startAngle: .degrees(-90), endAngle: .degrees(270)))
+                        .blur(radius: cornerRadius)
+                )
+            })
             .strokeStyle(cornerRadius: cornerRadius)
     }
 }
 
 extension ButtonStyle where Self == AngularButtonStyle {
     static var angular: Self {
-        return .init()
+        return .init(isEnabled: true)
+    }
+
+    static var enabledAngular: Self {
+        return .angular
+    }
+
+    static var disabledAngular: Self {
+        return .init(isEnabled: false)
     }
 }

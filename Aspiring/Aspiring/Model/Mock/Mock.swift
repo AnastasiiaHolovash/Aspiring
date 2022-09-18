@@ -15,3 +15,5 @@ var advertisements = [
         image: ""
     )
 ]
+
+var tasks: [Task] = []
