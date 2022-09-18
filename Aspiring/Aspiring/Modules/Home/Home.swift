@@ -16,7 +16,7 @@ struct HomeView: View {
     @State var showDetails = false
     @State var showPet = false
     @State var selectedIndex = 0
-    @EnvironmentObject var model: Model
+    @Binding var model: Model
     @AppStorage("isLiteMode") var isLiteMode = true
 
     var body: some View {
@@ -117,12 +117,12 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-            .environmentObject(Model())
-    }
-}
+//struct HomeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeView(model: <#Model#>)
+//            .environmentObject(Model())
+//    }
+//}
 
 struct ScrollPreferenceKey: PreferenceKey {
     static var defaultValue: CGFloat = 0

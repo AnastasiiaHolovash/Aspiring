@@ -64,6 +64,7 @@ struct AdvertisementDetailsView: View {
                     if showIWillVisit {
                         Button {
                             model.advertisements.first { $0.id == $0.id }?.updateWith(1)
+                            advertisement.updateWith(1)
                             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
                                 showIWillVisit = false
                             }

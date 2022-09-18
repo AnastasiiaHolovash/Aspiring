@@ -126,6 +126,7 @@ struct CreateTaskView: View {
                         .focused($focusedField, equals: .goal)
                         .shadow(color: focusedField == .goal ? .primary.opacity(0.3) : .clear, radius: 10, x: 0, y: 3)
                         .padding(.horizontal, 20)
+                        .textFieldStyle(PlainTextFieldStyle())
                     Button {
                         if !self.isFilled {
                             return

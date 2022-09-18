@@ -9,11 +9,18 @@ import SwiftUI
 import Combine
 
 class Model: ObservableObject {
-//    @Published var showDetail: Bool = false
     @Published var showQR: Bool = false
     @Published var showCreateTask: Bool = false
 
     @Published var advertisements = [
+        Advertisement(
+            title: "Корм для котиків 🐱",
+            type: .donation,
+            subtitle: "м. Київ вул. Жилянська 59",
+            limit: 2000,
+            alreadyDone: 0,
+            details: "-"
+        ),
         Advertisement(
             title: "Пакувальний центр",
             type: .work,
@@ -69,7 +76,7 @@ class Model: ObservableObject {
 
     @Published var welcome = Welcome(
         title: "Привіт, Олег",
-        stars: 195
+        stars: 100
     )
 
     static func generateQRCode(from string: String) -> UIImage? {
