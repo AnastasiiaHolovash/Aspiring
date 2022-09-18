@@ -63,7 +63,6 @@ var myAdvertisements = [
 
 let welcome = Welcome(
     title: "Привіт, Олег",
-    subtitle: "Ще 20 􀋃 до твого нового меча",
     stars: 195
 )
 

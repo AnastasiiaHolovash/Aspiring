@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    var welcomeData: Welcome = welcome
-    @Environment(\.sizeCategory) var sizeCategory
+    var welcomeData: Welcome
+    @EnvironmentObject var model: Model
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8.0) {
@@ -18,16 +18,8 @@ struct WelcomeView: View {
                 Spacer()
 
                 VStack {
-                    Image(systemName: "star.fill")
-                        .resizable(resizingMode: .stretch)
-                        .frame(width: 70, height: 70)
-                        .foregroundStyle(
-                            LinearGradient(
-                                colors: [Color("StarLight").opacity(0.7), Color("StarDark")],
-                                startPoint: .bottomLeading,
-                                endPoint: .topTrailing
-                            )
-                        )
+                    Image("star")
+                        .frame(width: 100, height: 100)
                     Text(String(welcomeData.stars))
                         .font(.title)
                 }
@@ -66,7 +58,7 @@ struct WelcomeView: View {
 
 struct FeaturedItem_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView()
+        WelcomeView(welcomeData: welcome)
             .environment(\.sizeCategory, .extraExtraLarge)
     }
 }

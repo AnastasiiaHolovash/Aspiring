@@ -74,11 +74,11 @@ struct HomeView: View {
 
     var welcomeView: some View {
         TabView {
-            ForEach(Array(advertisements.enumerated()), id: \.offset) { index, advertisement in
+            ForEach(Array(model.advertisements.enumerated()), id: \.offset) { index, advertisement in
                 GeometryReader { proxy in
                     let minX = proxy.frame(in: .global).minX
 
-                    WelcomeView()
+                    WelcomeView(welcomeData: model.welcome)
                         .frame(maxWidth: 500)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 40)
@@ -103,13 +103,12 @@ struct HomeView: View {
         )
         .sheet(isPresented: $showPet) {
             // TODO: Open Pet
-//            CourseView(namespace: namespace, course: featuredCourses[selectedIndex], show: $showCourse)
         }
     }
 
     var content: some View {
         VStack(alignment: .leading) {
-            ForEach(Array(advertisements.enumerated()), id: \.offset) { index, advertisement in
+            ForEach(Array(model.advertisements.enumerated()), id: \.offset) { index, advertisement in
                 if index != 0 { Divider() }
                 AdvertisementView(advertisement: advertisement)
                     .onTapGesture {
@@ -123,7 +122,7 @@ struct HomeView: View {
         .padding(20)
         .sheet(isPresented: $showDetails) {
             AdvertisementDetailsView(
-                advertisement: advertisements[selectedIndex],
+                advertisement: model.advertisements[selectedIndex],
                 showIWillVisit: true
             )
         }

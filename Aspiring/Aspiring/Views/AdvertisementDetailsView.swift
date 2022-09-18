@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AdvertisementDetailsView: View {
-    var advertisement: Advertisement = advertisements[0]
+    var advertisement: Advertisement
     let showIWillVisit: Bool
 
     @EnvironmentObject var model: Model
@@ -62,7 +62,7 @@ struct AdvertisementDetailsView: View {
                     Spacer()
 
                     Button {
-                        advertisements.first { $0.id == $0.id }?.updateWith(1)
+                        model.advertisements.first { $0.id == $0.id }?.updateWith(1)
                     } label: {
                         Text("👍 Я буду")
                             .frame(maxWidth: .infinity)
@@ -114,6 +114,6 @@ struct AdvertisementDetailsView: View {
 
 struct SectionView_Previews: PreviewProvider {
     static var previews: some View {
-        AdvertisementDetailsView(showIWillVisit: true)
+        AdvertisementDetailsView(advertisement: advertisements[0], showIWillVisit: true)
     }
 }
