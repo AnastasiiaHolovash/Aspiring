@@ -17,8 +17,8 @@ struct CreateTaskTextsItem: View {
     @Environment(\.sizeCategory) var sizeCategory
     @FocusState var focusedField: Field?
 
-    @State var title: String
-    @State var description: String
+    @ObservedObject var title: CreateTaskTextObject
+    @ObservedObject var description: CreateTaskTextObject
 
     @State var appear = [false, false, false]
 
@@ -34,7 +34,7 @@ struct CreateTaskTextsItem: View {
                         .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                         .frame(maxWidth: .maximum(51, 0), alignment: .leading)
                         .padding(0)
-                    TextField("Назва", text: $title)
+                    TextField("Назва", text: $title.text)
                         .inputStyle(emoji: "🪶")
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
@@ -46,7 +46,7 @@ struct CreateTaskTextsItem: View {
 //                            circleY = value
 //                        }
                 }
-                TextEditorView(string: $description)
+                TextEditorView(string: $description.text)
                     .padding(15)
                     .font(.body.weight(.regular))
                     .padding(.leading, 0)
@@ -84,7 +84,7 @@ struct CreateTaskTextsItem: View {
 
 struct CreateTaskTextsItem_Previews: PreviewProvider {
     static var previews: some View {
-        CreateTaskTextsItem(title: "", description: "")
+        CreateTaskTextsItem(title: CreateTaskTextObject(), description: CreateTaskTextObject())
             .environment(\.sizeCategory, .extraExtraLarge)
     }
 }

@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+class CreateTaskTextObject: ObservableObject {
+    @Published var text = ""
+}
+
 struct CreateTaskView: View {
 
     enum Field: Hashable {
@@ -23,9 +27,9 @@ struct CreateTaskView: View {
     @State var showStatusBar = true
     @FocusState var focusedField: Field?
 
-    @State var title: String = ""
+    @StateObject var title = CreateTaskTextObject()
     @State var type: AdvertisementType = .donation
-    @State var description: String = ""
+    @StateObject var description = CreateTaskTextObject()
     @State var emoji: Emoji? // if time left
 
     @State var city: String = ""
@@ -37,9 +41,10 @@ struct CreateTaskView: View {
     @State var appear = [false, false, false]
 
     var isFilled: Bool {
-        if title.isEmpty ||
-            description.isEmpty ||
-            goal.isEmpty {
+        if title.text.isEmpty ||
+            description.text.isEmpty ||
+            goal.isEmpty ||
+            Int(goal) == nil {
             return false
         }
         if type != .donation {
@@ -100,8 +105,12 @@ struct CreateTaskView: View {
                         .shadow(color: focusedField == .goal ? .primary.opacity(0.3) : .clear, radius: 10, x: 0, y: 3)
                         .padding(.horizontal, 20)
                     Button {
-//                        isCodeSent = true
-//                        let task = Task(title: <#T##String#>, type: <#T##AdvertisementType#>, description: <#T##String#>, emoji: <#T##Emoji?#>, city: <#T##String?#>, street: <#T##String?#>, houseNumber: <#T##String?#>, goal: <#T##Int#>, equivalentType: <#T##EquialentType#>)
+                        if !self.isFilled {
+                            return
+                        }
+                        let goal = Int(goal) ?? 0
+                        let task = Task(title: title.text, type: type, description: description.text, emoji: nil, city: city, street: street, houseNumber: houseNumber, goal: goal, equivalentType: type.equialent)
+                        tasks.append(task)
 
                     } label: {
                         Text("Отримати код")
@@ -118,7 +127,7 @@ struct CreateTaskView: View {
                             .buttonStyle(.disabledAngular)
                     })
                     .padding()
-                    .disabled(true)
+                    .disabled(!isFilled)
                     .controlSize(.large)
                     .shadow(color: Color("Shadow").opacity(0.2), radius: 30, x: 0, y: 30)
 
