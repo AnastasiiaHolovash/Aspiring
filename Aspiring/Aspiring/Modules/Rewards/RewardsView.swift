@@ -23,6 +23,7 @@ struct RewardsView: View {
         VStack {
             top
             segments
+            cats
         }
         .onAppear {
             withAnimation(.spring().delay(0.1)) {
@@ -112,6 +113,11 @@ struct RewardsView: View {
         .padding(.trailing, 20)
         .opacity(appear[1] ? 1 : 0)
         .offset(y: appear[1] ? 0 : -200)
+    }
+
+    var cats: some View {
+        CatsRewardsView()
+            .padding(.horizontal)
     }
 
 }
