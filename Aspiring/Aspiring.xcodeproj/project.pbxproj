@@ -47,6 +47,8 @@
 		F1B35B9128D7070C005396A8 /* CatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B35B9028D7070C005396A8 /* CatView.swift */; };
 		F1B35B9328D719CC005396A8 /* CatAdditionalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B35B9228D719CC005396A8 /* CatAdditionalsView.swift */; };
 		F1B35B9528D71C52005396A8 /* CatAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B35B9428D71C52005396A8 /* CatAddition.swift */; };
+		F1B35B9728D72440005396A8 /* Achievment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B35B9628D72440005396A8 /* Achievment.swift */; };
+		F1B35B9928D72DC4005396A8 /* AchievmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B35B9828D72DC4005396A8 /* AchievmentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +91,8 @@
 		F1B35B9028D7070C005396A8 /* CatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatView.swift; sourceTree = "<group>"; };
 		F1B35B9228D719CC005396A8 /* CatAdditionalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAdditionalsView.swift; sourceTree = "<group>"; };
 		F1B35B9428D71C52005396A8 /* CatAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAddition.swift; sourceTree = "<group>"; };
+		F1B35B9628D72440005396A8 /* Achievment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievment.swift; sourceTree = "<group>"; };
+		F1B35B9828D72DC4005396A8 /* AchievmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievmentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 				5D886BC328D6579F009E531A /* Welcome.swift */,
 				F124103228D660A600528D43 /* Task.swift */,
 				F1B35B9428D71C52005396A8 /* CatAddition.swift */,
+				F1B35B9628D72440005396A8 /* Achievment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				F1B35B8E28D7066A005396A8 /* AchievmentsView.swift */,
 				F1B35B9028D7070C005396A8 /* CatView.swift */,
 				F1B35B9228D719CC005396A8 /* CatAdditionalsView.swift */,
+				F1B35B9828D72DC4005396A8 /* AchievmentView.swift */,
 			);
 			path = Rewards;
 			sourceTree = "<group>";
@@ -360,8 +366,10 @@
 				F124102528D646E200528D43 /* Auth.swift in Sources */,
 				5D886BAA28D62FE8009E531A /* Model.swift in Sources */,
 				5D886BBA28D63DB9009E531A /* Advertisement.swift in Sources */,
+				F1B35B9928D72DC4005396A8 /* AchievmentView.swift in Sources */,
 				F124103F28D69D0200528D43 /* Styles.swift in Sources */,
 				5D886B9E28D61F94009E531A /* ContentView.swift in Sources */,
+				F1B35B9728D72440005396A8 /* Achievment.swift in Sources */,
 				5D886BB328D6375D009E531A /* Home.swift in Sources */,
 				5D886BC028D64209009E531A /* StrokeStyle.swift in Sources */,
 				5D886BB828D63B66009E531A /* Mock.swift in Sources */,
