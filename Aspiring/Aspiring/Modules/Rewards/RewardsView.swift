@@ -95,7 +95,7 @@ struct RewardsView: View {
 
     var top: some View {
         HStack(alignment: .top) {
-            Text("Ачівки")
+            Text("Досягнення")
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .font(.title.weight(.bold))
                 .padding(.leading, 20)

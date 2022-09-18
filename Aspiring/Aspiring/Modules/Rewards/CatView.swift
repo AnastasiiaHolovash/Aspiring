@@ -21,7 +21,7 @@ struct CatView: View {
             VStack {
                 HStack {
                     Text("Кіт 20 лвл")
-                        .font(.title.weight(.regular))
+                        .font(.title.weight(.medium))
                         .foregroundStyle(.linearGradient(colors: [.primary, .primary.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
                         .lineLimit(1)
                         .dynamicTypeSize(.large)
