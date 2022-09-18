@@ -33,8 +33,8 @@ struct ContentView: View {
                     .environmentObject(model)
             }
 
-            TabBar()
-                .offset(y: model.showDetail ? 200 : 0)
+//            TabBar()
+//                .offset(y: model.showDetail ? 200 : 0)
         }
         .sheet(isPresented: $isShowingScanner) {
             codeScannerView
@@ -49,9 +49,9 @@ struct ContentView: View {
             CodeScannerView(codeTypes: [.qr]) { result in
                 switch result {
                 case let .success(result):
-                    isShowingResult = true
                     resultStars = result.string.components(separatedBy: "\n").last ?? ""
                     model.welcome.stars += Int(resultStars) ?? 50
+                    isShowingResult = true
 //                    model.welcome.stars += 50
 
                     DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {

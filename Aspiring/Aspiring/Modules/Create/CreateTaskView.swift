@@ -40,6 +40,8 @@ struct CreateTaskView: View {
     @State var goal: String = ""
 
     @State var appear = [false, false, false]
+    @EnvironmentObject var model: Model
+    @State var newAdvertisement: Advertisement?
 
     var isFilled: Bool {
         if title.text.isEmpty ||
@@ -77,7 +79,7 @@ struct CreateTaskView: View {
                             .font(.body.weight(.bold))
                             .foregroundColor(.secondary)
                             .padding(8)
-                        .background(.ultraThinMaterial, in: Circle())
+                            .background(.ultraThinMaterial, in: Circle())
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
 
@@ -101,14 +103,14 @@ struct CreateTaskView: View {
                     categories
 
                     if type != .donation {
-                    Text("Локація")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.title3.weight(.medium))
-                        .padding(.top, 20)
-                        .padding(.leading, 20)
-                        .foregroundStyle(.linearGradient(colors: [.primary, .primary.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
+                        Text("Локація")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .font(.title3.weight(.medium))
+                            .padding(.top, 20)
+                            .padding(.leading, 20)
+                            .foregroundStyle(.linearGradient(colors: [.primary, .primary.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
                         locations
-                        .padding()
+                            .padding()
                     }
                     Text("Мета")
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -129,8 +131,25 @@ struct CreateTaskView: View {
                             return
                         }
                         let goal = Int(goal) ?? 0
-                        let task = Task(title: title.text, type: type, description: description.text, emoji: nil, city: city, street: street, houseNumber: houseNumber, goal: goal, equivalentType: type.equialent)
-                        tasks.append(task)
+                        let subtitle: String = type == .donation
+                            ? "\(goal) ₴"
+                            : "\(city) \(street) \(houseNumber)"
+                        let new = Advertisement(
+                            title: title.text,
+                            type: type,
+                            subtitle: subtitle,
+                            limit: goal,
+                            alreadyDone: 0,
+                            details: description.text
+                        )
+                        self.newAdvertisement = new
+//                        let task = Task(title: title.text, type: type, description: description.text, emoji: nil, city: city, street: street, houseNumber: houseNumber, goal: goal, equivalentType: type.equialent)
+//                        tasks.append(task)
+
+                        model.advertisements.insert(new, at: 0)
+                        model.myAdvertisements.insert(new, at: 0)
+                        model.showQR = true
+                        presentedAsModal = false
 
                     } label: {
                         Text("Отримати код")
@@ -142,20 +161,28 @@ struct CreateTaskView: View {
                         view
                             .buttonStyle(.angular)
                     })
-                    .if(!isFilled, transform: { view in
-                        view
-                            .buttonStyle(.disabledAngular)
-                    })
-                    .padding()
-                    .disabled(!isFilled)
-                    .controlSize(.large)
-                    .shadow(color: Color("Shadow").opacity(0.2), radius: 30, x: 0, y: 30)
+                        .if(!isFilled, transform: { view in
+                            view
+                                .buttonStyle(.disabledAngular)
+                        })
+                            .padding()
+                            .disabled(!isFilled)
+                            .controlSize(.large)
+                            .shadow(color: Color("Shadow").opacity(0.2), radius: 30, x: 0, y: 30)
 
                 }.frame(minWidth: 100, maxWidth: .infinity, minHeight: proxy.size.height, alignment: .top)
                     .shadow(color: Color("Shadow").opacity(isLiteMode ? 0 : 0.3), radius: 5, x: 0, y: 3)
                     .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 20))
                     .blur(radius: abs(minX / 40))
                     .padding(.top, 0)
+            }
+        }
+        .sheet(isPresented: $model.showQR) {
+            if let id = newAdvertisement?.id,
+               let starsCost = newAdvertisement?.type.starsCost,
+               let image = CodeGenerator.generateQRCode(from: "\(id)\n\(starsCost)") {
+                QRScreenView(qrImage: Image(uiImage: UIImage(data: image)!))
+                    .environmentObject(model)
             }
         }
         .frame(maxHeight: .infinity, alignment: .bottom)
@@ -179,8 +206,8 @@ struct CreateTaskView: View {
         }
         .onTapGesture {
             UIApplication.shared.windows
-                        .first { $0.isKeyWindow }?
-                        .endEditing(true)
+                .first { $0.isKeyWindow }?
+                .endEditing(true)
         }
         .onAppear {
             withAnimation(.spring().delay(0.1)) {

@@ -17,9 +17,10 @@ struct ProgressView: View {
             .stroke(style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
             .fill(.angularGradient(
                 colors: [
-                    .purple,
-                    .pink,
-                    .purple
+                    .blue,
+                    .cyan,
+                    .yellow,
+                    .yellow
                 ],
                 center: .center,
                 startAngle: .degrees(0),

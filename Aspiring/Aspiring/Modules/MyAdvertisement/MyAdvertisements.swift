@@ -34,6 +34,7 @@ struct MyAdvertisements: View {
             AdvertisementView(advertisement: createAdvertisement)
                 .background(Color.cyan.opacity(0.5))
                 .onTapGesture {
+//                    model.showCreateTask = true
                     self.presentingModal = true
                 }
                 .sheet(isPresented: $presentingModal) { CreateTaskView(presentedAsModal: self.$presentingModal) }

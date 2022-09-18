@@ -55,6 +55,19 @@ extension Advertisement {
 
 extension AdvertisementType {
 
+    var starsCost: Int {
+        switch self {
+        case .work:
+            return 100
+        case .donation:
+            return 30
+        case .itemDonation:
+            return 30
+        case .create:
+            return 0
+        }
+    }
+
     var imageName: String {
         switch self {
         case .work:

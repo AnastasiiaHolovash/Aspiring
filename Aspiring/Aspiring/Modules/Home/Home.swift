@@ -73,37 +73,25 @@ struct HomeView: View {
     }
 
     var welcomeView: some View {
-        TabView {
-            ForEach(Array(model.advertisements.enumerated()), id: \.offset) { index, advertisement in
-                GeometryReader { proxy in
-                    let minX = proxy.frame(in: .global).minX
-
-                    WelcomeView(welcomeData: model.welcome)
-                        .frame(maxWidth: 500)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 40)
-                        .rotation3DEffect(.degrees(minX / -10), axis: (x: 0, y: 1, z: 0))
-                        .shadow(color: Color("Shadow").opacity(isLiteMode ? 0 : 0.3), radius: 5, x: 0, y: 3)
-                        .blur(radius: abs(minX / 40))
-                        .onTapGesture {
-                            showPet = true
-                            selectedIndex = index
-                        }
-                        .accessibilityElement(children: .combine)
-                        .accessibilityAddTraits(.isButton)
-                }
+        WelcomeView(welcomeData: model.welcome)
+            .frame(maxWidth: 500)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 40)
+            .shadow(color: Color("Shadow").opacity(isLiteMode ? 0 : 0.3), radius: 5, x: 0, y: 3)
+            .onTapGesture {
+                showPet = true
             }
-        }
-        .tabViewStyle(.page(indexDisplayMode: .never))
-        .frame(height: 360)
-        .background(
-            Image("BlueSpot")
-                .offset(x: 250, y: -100)
-                .accessibility(hidden: true)
-        )
-        .sheet(isPresented: $showPet) {
-            // TODO: Open Pet
-        }
+            .accessibilityElement(children: .combine)
+            .accessibilityAddTraits(.isButton)
+            .frame(height: 360)
+            .background(
+                Image("BlueSpot")
+                    .offset(x: 250, y: -100)
+                    .accessibility(hidden: true)
+            )
+            .sheet(isPresented: $showPet) {
+                // TODO: Open Pet
+            }
     }
 
     var content: some View {

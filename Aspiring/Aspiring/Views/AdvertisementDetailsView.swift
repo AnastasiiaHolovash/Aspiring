@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct AdvertisementDetailsView: View {
-    var advertisement: Advertisement
-    let showIWillVisit: Bool
+    @State var advertisement: Advertisement
+    @State var showIWillVisit: Bool
 
     @EnvironmentObject var model: Model
     @Environment(\.dismiss) var dismiss
@@ -61,19 +61,23 @@ struct AdvertisementDetailsView: View {
 
                     Spacer()
 
-                    Button {
-                        model.advertisements.first { $0.id == $0.id }?.updateWith(1)
-                    } label: {
-                        Text("👍 Я буду")
-                            .frame(maxWidth: .infinity)
+                    if showIWillVisit {
+                        Button {
+                            model.advertisements.first { $0.id == $0.id }?.updateWith(1)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                                showIWillVisit = false
+                            }
+                        } label: {
+                            Text("👍 Я буду")
+                                .frame(maxWidth: .infinity)
+                        }
+                        .frame(height: 44, alignment: .center)
+                        .controlSize(.large)
+                        .background(.blue)
+                        .foregroundColor(.black)
+                        .cornerRadius(16)
+                        .padding(.horizontal, 20)
                     }
-                    .frame(height: 44, alignment: .center)
-                    .controlSize(.large)
-                    .background(.blue)
-                    .foregroundColor(.black)
-                    .cornerRadius(16)
-                    .padding(.horizontal, 20)
-
 
                     Spacer()
 

@@ -9,7 +9,9 @@ import SwiftUI
 import Combine
 
 class Model: ObservableObject {
-    @Published var showDetail: Bool = false
+//    @Published var showDetail: Bool = false
+    @Published var showQR: Bool = false
+    @Published var showCreateTask: Bool = false
 
     @Published var advertisements = [
         Advertisement(
@@ -70,4 +72,19 @@ class Model: ObservableObject {
         stars: 195
     )
 
+    static func generateQRCode(from string: String) -> UIImage? {
+        let data = string.data(using: String.Encoding.ascii)
+
+        if let filter = CIFilter(name: "CIQRCodeGenerator") {
+            filter.setValue(data, forKey: "inputMessage")
+            let transform = CGAffineTransform(scaleX: 3, y: 3)
+
+            if let output = filter.outputImage?.transformed(by: transform) {
+                let image = UIImage(ciImage: output)
+                return UIImage(ciImage: output)
+            }
+        }
+
+        return nil
+    }
 }
