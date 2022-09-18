@@ -23,7 +23,12 @@ struct RewardsView: View {
         VStack {
             top
             segments
-            cats
+            if selectedSegmentTag == 0 {
+                cats
+            } else {
+                achievments
+                    .padding(.horizontal)
+            }
         }
         .onAppear {
             withAnimation(.spring().delay(0.1)) {
@@ -118,6 +123,10 @@ struct RewardsView: View {
     var cats: some View {
         CatsRewardsView()
             .padding(.horizontal)
+    }
+
+    var achievments: some View {
+        AchievmentsView(achievments: userAchievments)
     }
 
 }

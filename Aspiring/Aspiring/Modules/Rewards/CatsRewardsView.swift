@@ -9,8 +9,6 @@ import SwiftUI
 
 struct CatsRewardsView: View {
 
-    @State var appear = [false, false, false]
-
     var body: some View {
         ZStack {
             Color.clear.ignoresSafeArea()
@@ -19,17 +17,6 @@ struct CatsRewardsView: View {
                 scins
                 wearpons
                 food
-            }
-        }
-        .onAppear {
-            withAnimation(.spring().delay(0.1)) {
-                appear[0] = true
-            }
-            withAnimation(.spring().delay(0.2)) {
-                appear[1] = true
-            }
-            withAnimation(.spring().delay(0.3)) {
-                appear[2] = true
             }
         }
         .frame(maxHeight: .infinity, alignment: .top)
