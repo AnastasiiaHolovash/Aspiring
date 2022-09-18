@@ -42,6 +42,8 @@
 		F124103F28D69D0200528D43 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124103E28D69D0200528D43 /* Styles.swift */; };
 		F1B35B8828D6FA98005396A8 /* RewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B35B8728D6FA98005396A8 /* RewardsView.swift */; };
 		F1B35B8B28D7028D005396A8 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = F1B35B8A28D7028D005396A8 /* Introspect */; };
+		F1B35B8D28D70657005396A8 /* CatsRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B35B8C28D70657005396A8 /* CatsRewardsView.swift */; };
+		F1B35B8F28D7066A005396A8 /* AchievmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B35B8E28D7066A005396A8 /* AchievmentsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +81,8 @@
 		F124103C28D6896D00528D43 /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
 		F124103E28D69D0200528D43 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		F1B35B8728D6FA98005396A8 /* RewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsView.swift; sourceTree = "<group>"; };
+		F1B35B8C28D70657005396A8 /* CatsRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsRewardsView.swift; sourceTree = "<group>"; };
+		F1B35B8E28D7066A005396A8 /* AchievmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievmentsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +262,8 @@
 			isa = PBXGroup;
 			children = (
 				F1B35B8728D6FA98005396A8 /* RewardsView.swift */,
+				F1B35B8C28D70657005396A8 /* CatsRewardsView.swift */,
+				F1B35B8E28D7066A005396A8 /* AchievmentsView.swift */,
 			);
 			path = Rewards;
 			sourceTree = "<group>";
@@ -362,11 +368,13 @@
 				5D886BAF28D631A1009E531A /* Tab.swift in Sources */,
 				5D886BBC28D63F33009E531A /* Animations.swift in Sources */,
 				F124102C28D64C5800528D43 /* InputStyle.swift in Sources */,
+				F1B35B8F28D7066A005396A8 /* AchievmentsView.swift in Sources */,
 				5D886BD228D679DF009E531A /* MyAdvertisements.swift in Sources */,
 				5D886BC428D657A0009E531A /* Welcome.swift in Sources */,
 				5D886B9C28D61F94009E531A /* AspiringApp.swift in Sources */,
 				5D886BC228D655F8009E531A /* WelcomeView.swift in Sources */,
 				5D886BD428D6819B009E531A /* AdvertisementDetailsView.swift in Sources */,
+				F1B35B8D28D70657005396A8 /* CatsRewardsView.swift in Sources */,
 				5D886BAF28D631A1009E531A /* Tab.swift in Sources */,
 				5D886BBC28D63F33009E531A /* Animations.swift in Sources */,
 				5D886BB528D63AA0009E531A /* NavigationBar.swift in Sources */,
