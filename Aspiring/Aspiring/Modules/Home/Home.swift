@@ -91,6 +91,7 @@ struct HomeView: View {
             )
             .sheet(isPresented: $showPet) {
                 // TODO: Open Pet
+                RewardsView(presentedAsModal: $showPet)
             }
     }
 

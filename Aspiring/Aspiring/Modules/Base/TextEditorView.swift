@@ -12,6 +12,11 @@ struct TextEditorView: View {
     @Binding var string: String
     @State private var textEditorHeight : CGFloat = CGFloat()
 
+    init(string: Binding<String>) {
+        self._string = string
+        UITextView.appearance().backgroundColor = .clear
+    }
+
     var body: some View {
 
         ZStack(alignment: .leading) {

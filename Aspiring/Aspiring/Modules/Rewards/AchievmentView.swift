@@ -1,5 +1,5 @@
 //
-//  CatView.swift
+//  AchievmentView.swift
 //  Aspiring
 //
 //  Created by Yelyzaveta Kartseva on 18.09.2022.
@@ -7,21 +7,24 @@
 
 import SwiftUI
 
-struct CatView: View {
-    @AppStorage("isLiteMode") var isLiteMode = true
+struct AchievmentView: View {
+
+    @State var achievment: Achievment = userAchievments[0]
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8.0) {
             HStack {
                 Spacer()
-                Text("🐈‍⬛")
-                    .font(.system(size: 150))
+                Text(achievment.emoji)
+                    .font(.system(size: 90))
+                    .lineLimit(0)
                 Spacer()
             }
             VStack {
                 HStack {
-                    Text("Кіт 20 лвл")
-                        .font(.title.weight(.medium))
+                    Spacer()
+                    Text(achievment.title)
+                        .font(.title.weight(.bold))
                         .foregroundStyle(.linearGradient(colors: [.primary, .primary.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
                         .lineLimit(1)
                         .dynamicTypeSize(.large)
@@ -29,32 +32,36 @@ struct CatView: View {
                 }
                 .padding(.bottom, 4)
                 HStack {
-                    Text("20/100 􀋃 ")
+                    Spacer()
+                    Text(achievment.description)
                         .font(.body.weight(.regular))
-                        .foregroundStyle(.linearGradient(colors: [.primary, .primary.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
-                        .lineLimit(1)
-                        .dynamicTypeSize(.large)
-                    Text("до наступного лвл")
-                        .font(.body.weight(.medium))
                         .foregroundStyle(.linearGradient(colors: [.primary, .primary.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
                         .lineLimit(1)
                         .dynamicTypeSize(.large)
                     Spacer()
                 }
             }
-            .padding(.leading)
+//            .padding(.leading)
             .padding(.bottom)
         }
-        .frame(width: .infinity, height: 272.0)
         .background(.ultraThinMaterial)
+        .if(achievment.isReady, transform: { view in
+                view.background(
+                    RoundedRectangle(cornerRadius: 30, style: .continuous)
+                        .fill(.linearGradient(colors: [.teal, .yellow], startPoint: .topLeading, endPoint: .bottomTrailing))
+                        .rotation3DEffect(.degrees(10), axis: (x: 0, y: 1, z: 0), anchor: .bottomTrailing)
+                        .rotationEffect(.degrees(180))
+                        .padding(.trailing, 40)
+                )
+        })
         .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
         .strokeStyle()
     }
+
 }
 
-
-struct CatView_Previews: PreviewProvider {
+struct AchievmentView_Previews: PreviewProvider {
     static var previews: some View {
-        CatView()
+        AchievmentView(achievment: userAchievments[0])
     }
 }

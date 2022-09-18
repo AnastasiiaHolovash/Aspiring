@@ -97,3 +97,12 @@ var catFood: [CatAddition] = [
     CatAddition(emoji: "🐠", price: "60"),
     CatAddition(emoji: "🍣", price: "99")
 ]
+
+var userAchievments: [Achievment] = [
+    Achievment(title: "Крок", description: "Допомогти 1 раз", emoji: "🦶", isReady: true),
+    Achievment(title: "Підтримка", description: "Допомогти 5 разів", emoji: "💪", isReady: true),
+    Achievment(title: "Донор", description: "Задонатити 1 раз", emoji: "🩸", isReady: false),
+    Achievment(title: "Рятівник", description: "Задонатити 6 разів", emoji: "👨‍🚒", isReady: false),
+    Achievment(title: "Робітник", description: "Виконати 1 робіт", emoji: "🛠", isReady: false),
+    Achievment(title: "Робот", description: "Виконати 7 робіт", emoji: "🤖", isReady: false)
+]
