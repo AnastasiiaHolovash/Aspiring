@@ -33,8 +33,7 @@ struct ContentView: View {
                     .environmentObject(model)
             }
 
-//            TabBar()
-//                .offset(y: model.showDetail ? 200 : 0)
+            TabBar()
         }
         .sheet(isPresented: $isShowingScanner) {
             codeScannerView

@@ -34,10 +34,9 @@ struct MyAdvertisements: View {
             AdvertisementView(advertisement: createAdvertisement)
                 .background(Color.cyan.opacity(0.5))
                 .onTapGesture {
-//                    model.showCreateTask = true
-                    self.presentingModal = true
+                    model.showCreateTask = true
                 }
-                .sheet(isPresented: $presentingModal) { CreateTaskView(presentedAsModal: self.$presentingModal) }
+                .sheet(isPresented: $model.showCreateTask) { CreateTaskView(presentedAsModal: self.$presentingModal) }
 
             ForEach(Array(model.myAdvertisements.enumerated()), id: \.offset) { index, advertisement in
                 if index != 0 { Divider() }

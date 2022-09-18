@@ -32,6 +32,7 @@ struct QRScreenView: View {
                 Spacer()
 
                 Button {
+                    model.showCreateTask = false
                     model.showQR = false
                 } label: {
                     Image(systemName: "xmark")

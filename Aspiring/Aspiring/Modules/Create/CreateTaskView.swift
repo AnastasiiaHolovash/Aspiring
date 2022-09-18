@@ -73,7 +73,7 @@ struct CreateTaskView: View {
                         .foregroundStyle(.linearGradient(colors: [.accentColor, .accentColor.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
 
                     Button {
-                        self.presentedAsModal = false
+                        model.showCreateTask = false
                     } label: {
                         Image(systemName: "xmark")
                             .font(.body.weight(.bold))
@@ -143,8 +143,6 @@ struct CreateTaskView: View {
                             details: description.text
                         )
                         self.newAdvertisement = new
-//                        let task = Task(title: title.text, type: type, description: description.text, emoji: nil, city: city, street: street, houseNumber: houseNumber, goal: goal, equivalentType: type.equialent)
-//                        tasks.append(task)
 
                         model.advertisements.insert(new, at: 0)
                         model.myAdvertisements.insert(new, at: 0)
