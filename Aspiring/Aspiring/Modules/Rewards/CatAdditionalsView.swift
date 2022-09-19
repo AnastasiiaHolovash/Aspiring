@@ -25,7 +25,7 @@ struct CatAdditionalsView: View {
                     Spacer()
                 }
                 HStack {
-                    Text("У тебе є 200 􀋃")
+                    Text("У тебе є 200 ⭐️")
                         .font(.body.weight(.medium))
                         .foregroundStyle(.linearGradient(colors: [.primary, .primary.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
                         .lineLimit(1)

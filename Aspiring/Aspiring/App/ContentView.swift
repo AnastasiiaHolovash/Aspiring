@@ -21,8 +21,8 @@ struct ContentView: View {
 
             switch selectedTab {
             case .home:
-                HomeView(model: model)
-//                    .environmentObject(model)
+                HomeView()
+                    .environmentObject(model)
 
             case .myAdvertisement:
                 MyAdvertisements()

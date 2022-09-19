@@ -16,7 +16,8 @@ struct HomeView: View {
     @State var showDetails = false
     @State var showPet = false
     @State var selectedIndex = 0
-    @Binding var model: Model
+//    @Binding var model: Model
+    @EnvironmentObject var model: Model
     @AppStorage("isLiteMode") var isLiteMode = true
 
     var body: some View {
